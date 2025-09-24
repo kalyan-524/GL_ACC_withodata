@@ -1,0 +1,17 @@
+<mvc:View controllerName="ladera.glcreateaccount.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="GL Request Form">
+
+    <!-- <FlexBox > -->
+        <GenericTile 
+         frameType="TwoByOne"
+         class="sapUiTinyMargin"
+         backgroundImage="https://tse1.mm.bing.net/th/id/OIP.AYI2KeT8B9otNX0Pp-5JGgHaFj?rs=1"
+         header="Create GL Acc"
+         press="oncreategl">
+                </GenericTile>
+    <!-- </FlexBox> -->
+
+    </Page>
+</mvc:View>

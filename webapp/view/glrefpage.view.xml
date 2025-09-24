@@ -1,0 +1,30 @@
+<mvc:View controllerName="ladera.glcreateaccount.controller.glrefpage"
+           xmlns:mvc="sap.ui.core.mvc"
+           xmlns="sap.m"
+           xmlns:form="sap.ui.layout.form">
+    <Page id="Glref" title="GL Reference form">
+        <Toolbar>
+            <Button text="Back" press="onnavback"/>
+        </Toolbar>
+
+        <form:SimpleForm editable="false" title="Selected GL Details">
+            <form:content>
+                <Label text="GL Account Number"/>
+                <Text text="{selectedGL>/GlaccType}"/>  <!-- Use selectedGL here -->
+
+                <Label text="Company Code"/>
+                <Text text="{selectedGL>/CompanyCode}"/>  <!-- Use selectedGL here -->
+
+                <Label text="GL Account Type"/>
+                <Text text="{selectedGL>/Glaccnum}"/>  <!-- Use selectedGL here -->
+
+                <Label text="Account Group"/>
+                <Text text="{selectedGL>/AccountGroup}"/>  <!-- Use selectedGL here -->
+
+                <Label text="Account Currency"/>
+                <Text text="{selectedGL>/AccountCurrency}"/>  <!-- Use selectedGL here -->
+            </form:content>
+        </form:SimpleForm>
+
+    </Page>
+</mvc:View>

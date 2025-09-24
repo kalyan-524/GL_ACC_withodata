@@ -1,0 +1,76 @@
+<mvc:View xmlns:simple="sap.gantt.simple" 
+    xmlns:f="sap.f"
+    controllerName="ladera.glcreateaccount.controller.creategl"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <App id="GL">
+        <Page title="G/L Account" >
+        <Button text="Back" press="onnavback"/>
+
+
+            <!-- Input Form -->
+            <form:SimpleForm id="idInputGLAccount" editable="false">
+                <form:content>
+                    <FlexBox class="sapUiSmallMarginTop sapUiSmallMargin">       
+                        <VBox class="sapUiSmallMarginTop sapUiSmallMargin">
+                            <Label text="Reference GL Num" required="true"/>
+                            <Input 
+                                id="refGLNum"
+                                placeholder="Enter GL Number"
+                                showValueHelp="true"
+                                valueHelpRequest=".onValueHelpRequest"/>
+                            <Label text="Company Code" required="true"/>
+                            <Input value=" " width="200px"/>
+                        </VBox>
+                        <VBox class="sapUiSmallMarginTop sapUiSmallMargin">
+                            <Label text="Created By"/>
+                            <Input value=" " required="true" width="200px"/>
+                            <Label text="Created On"/>
+                            <DatePicker placeholder=" " width="200px"/>
+                        </VBox>
+                    </FlexBox>
+                </form:content>
+            </form:SimpleForm>
+
+            <!-- Footer with Submit -->
+            <footer>
+                <OverflowToolbar>
+                    <ToolbarSpacer/>
+                    <Button text="Copy Ref to" type="Emphasized" id="abc" press="oncopyrefPress"/>
+                </OverflowToolbar>
+            </footer>
+
+            
+
+            <!-- Selected GL Accounts Table -->
+            <Title text="Selected GL Accounts" level="H3" class="sapUiSmallMarginTop"/>
+           <Table id="glDetailsTable" items="{local>/GLDetails}" mode="SingleSelectLeft"
+           selectionChange="onTableSelectionChange">
+    <columns>
+        <Column><Text text="GL ACC NUM"/></Column>
+        <Column><Text text="Company Code"/></Column>
+        <Column><Text text="GL Acc Type"/></Column>
+        <Column><Text text="Account Group"/></Column>
+        <Column><Text text="Account Currency"/></Column>
+    </columns>
+    <items>
+        <ColumnListItem>
+            <cells>
+                <Text text="{local>Glaccnum}"/>
+                <Text text="{local>CompanyCode}"/>
+                <Text text="{local>GlaccType}"/>
+                <Text text="{local>AccountGroup}"/>
+                <Text text="{local>AccountCurrency}"/>
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
+
+
+
+        </Page>
+    </App>
+</mvc:View>
