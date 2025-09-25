@@ -72,7 +72,10 @@ sap.ui.define([
 
         onTableSelectionChange: function (oEvent) {
             const oSelectedItem = oEvent.getParameter("listItem");
-            const oSelectedData = oSelectedItem.getBindingContext("local").getObject();
+            // var sSelectedItemId = oSelectedItem.getBindingContext().getProperty("");
+             const oSelectedData = oSelectedItem.getBindingContext("local").getObject();
+
+            // this.getOwnerComponent().getModel("appState").setProperty("/selectedItemId", sSelectedItemId);
 
             if (oSelectedData) {
                 // Save selected data to a temporary model
@@ -88,33 +91,16 @@ sap.ui.define([
                 MessageToast.show("Please select a GL record from the table.");
                 return;
             }
+            const oTable = this.byId("glDetailsTable"); // your table id
+            if (oTable) {
+            oTable.removeSelections(true); // clears selection
+            }
 
             // Navigate to the object page
             this.getOwnerComponent().getRouter().navTo("glrefpage");
 }
 
-        
 
-        // onTableSelectionChange: function (oEvent) {
-        //     const oSelectedItem = oEvent.getParameter("listItem");
-        //     const oSelectedData = oSelectedItem.getBindingContext("local").getObject();
-        //     if (oSelectedData) {
-        //         // Save selected data to a temporary model
-        //         const oSelectedModel = new JSONModel(oSelectedData);
-        //         this.getOwnerComponent().setModel(oSelectedModel, "selectedGL");
-        //         // this.getOwnerComponent().getRouter().navTo("glrefpage")
-        //     }
-        // }, oncopyrefPress: function () {
-        //     const oSelectedModel = this.getOwnerComponent().getModel("selectedGL");
-        //     //  this.getOwnerComponent().setModel(oSelectedModel, "selected");
-
-        //     if (!oSelectedModel || !oSelectedModel.getData()) {
-        //         MessageToast.show("Please select a GL record from the table.");
-        //         return;
-        //     }
-
-        //     this.getOwnerComponent().getRouter().navTo("glrefpage");
-        // },
 
 
     });

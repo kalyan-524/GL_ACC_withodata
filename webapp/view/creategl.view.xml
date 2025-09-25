@@ -48,7 +48,7 @@
             <!-- Selected GL Accounts Table -->
             <Title text="Selected GL Accounts" level="H3" class="sapUiSmallMarginTop"/>
            <Table id="glDetailsTable" items="{local>/GLDetails}" mode="SingleSelectLeft"
-           selectionChange="onTableSelectionChange">
+           selectionChange="onTableSelectionChange" >
     <columns>
         <Column><Text text="GL ACC NUM"/></Column>
         <Column><Text text="Company Code"/></Column>

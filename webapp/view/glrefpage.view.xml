@@ -7,24 +7,40 @@
             <Button text="Back" press="onnavback"/>
         </Toolbar>
 
-        <form:SimpleForm editable="false" title="Selected GL Details">
+        <!-- <form:SimpleForm editable="false" title="Selected GL Details">
             <form:content>
                 <Label text="GL Account Number"/>
-                <Text text="{selectedGL>/GlaccType}"/>  <!-- Use selectedGL here -->
+                <Text text="{selectedGL>/GlaccType}"/>  
 
                 <Label text="Company Code"/>
-                <Text text="{selectedGL>/CompanyCode}"/>  <!-- Use selectedGL here -->
+                <Text text="{selectedGL>/CompanyCode}"/>  
 
                 <Label text="GL Account Type"/>
-                <Text text="{selectedGL>/Glaccnum}"/>  <!-- Use selectedGL here -->
+                <Text text="{selectedGL>/Glaccnum}"/>  
 
                 <Label text="Account Group"/>
-                <Text text="{selectedGL>/AccountGroup}"/>  <!-- Use selectedGL here -->
+                <Text text="{selectedGL>/AccountGroup}"/>  
 
                 <Label text="Account Currency"/>
-                <Text text="{selectedGL>/AccountCurrency}"/>  <!-- Use selectedGL here -->
+                <Text text="{selectedGL>/AccountCurrency}"/>  
             </form:content>
-        </form:SimpleForm>
+        </form:SimpleForm> -->
+
+
+        <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+        <form:content>
+            <Label text="GL ACC NUM"/>
+            <Input value="{selectedGL>/Glaccnum}"/>
+            <Label text="Company Code"/>
+            <Input value="{selectedGL>/CompanyCode}"/>
+            <Label text="GL Acc Type"/>
+            <Input value="{selectedGL>/GlaccType}"/>
+            <Label text="Account Group"/>
+            <Input value="{selectedGL>/AccountGroup}"/>
+            <Label text="Account Currency"/>
+            <Input value="{selectedGL>/AccountCurrency}"/>
+        </form:content>
+    </form:SimpleForm>
 
     </Page>
 </mvc:View>
