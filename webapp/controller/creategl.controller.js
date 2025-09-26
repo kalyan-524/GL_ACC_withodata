@@ -72,10 +72,7 @@ sap.ui.define([
 
         onTableSelectionChange: function (oEvent) {
             const oSelectedItem = oEvent.getParameter("listItem");
-            // var sSelectedItemId = oSelectedItem.getBindingContext().getProperty("");
-             const oSelectedData = oSelectedItem.getBindingContext("local").getObject();
-
-            // this.getOwnerComponent().getModel("appState").setProperty("/selectedItemId", sSelectedItemId);
+            const oSelectedData = oSelectedItem.getBindingContext("local").getObject();
 
             if (oSelectedData) {
                 // Save selected data to a temporary model
@@ -98,6 +95,37 @@ sap.ui.define([
 
             // Navigate to the object page
             this.getOwnerComponent().getRouter().navTo("glrefpage");
+},
+ongoPress: function () {
+    var oModel = this.getView().getModel();   // ODataModel (ZRK_GLCREATION_SRV)
+    var oLocalModel = this.getView().getModel("local");
+
+    oModel.read("/GLAccDataSet", {
+        success: function (oData) {
+            // oData.results contains array of GL accounts
+            oLocalModel.setProperty("/GLDetails", oData.results);
+        },
+        error: function (oError) {
+            console.error("Error while fetching all GL Accounts", oError);
+            sap.m.MessageToast.show("Failed to load GL Accounts");
+        }
+    });
+},
+onCreatePress: function () {
+    // Create a fresh JSONModel to hold new GL Account data
+    // var oNewGL = new sap.ui.model.json.JSONModel({
+    //     Glaccnum: "",
+    //     CompanyCode: "",
+    //     GlaccType: "",
+    //     AccountGroup: "",
+    //     AccountCurrency: ""
+    // });
+
+    // Attach it to the component with name "newGL"
+    // this.getOwnerComponent().setModel(oNewGL, "newGL");
+
+    // Navigate to the creation page (glrefpage)
+    this.getOwnerComponent().getRouter().navTo("newgl");
 }
 
 

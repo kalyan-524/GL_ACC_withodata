@@ -27,12 +27,12 @@
         </form:SimpleForm> -->
 
 
-        <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+        <form:SimpleForm editable="true" layout="ResponsiveGridLayout" width="700px">
         <form:content>
-            <Label text="GL ACC NUM"/>
-            <Input value="{selectedGL>/Glaccnum}"/>
+            <Label text="GL Account Num"/>
+            <Input value="{selectedGL>/Glaccnum}" editable= "false"/>
             <Label text="Company Code"/>
-            <Input value="{selectedGL>/CompanyCode}"/>
+            <Input value="{selectedGL>/CompanyCode}" />
             <Label text="GL Acc Type"/>
             <Input value="{selectedGL>/GlaccType}"/>
             <Label text="Account Group"/>
@@ -41,6 +41,32 @@
             <Input value="{selectedGL>/AccountCurrency}"/>
         </form:content>
     </form:SimpleForm>
+
+    <!-- <form:SimpleForm editable="true" layout="ResponsiveGridLayout" width="700px">
+    <form:content>
+        <Label text="GL Account Num"/>
+        <Input value="{newGL>/Glaccnum}"/>
+
+        <Label text="Company Code"/>
+        <Input value="{newGL>/CompanyCode}"/>
+
+        <Label text="GL Acc Type"/>
+        <Input value="{newGL>/GlaccType}"/>
+
+        <Label text="Account Group"/>
+        <Input value="{newGL>/AccountGroup}"/>
+
+        <Label text="Account Currency"/>
+        <Input value="{newGL>/AccountCurrency}"/>
+    </form:content>
+</form:SimpleForm> -->
+
+    <footer>
+                <OverflowToolbar>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized"  press="onsavePress"/>
+                </OverflowToolbar>
+            </footer>
 
     </Page>
 </mvc:View>

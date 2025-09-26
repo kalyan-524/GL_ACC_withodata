@@ -34,14 +34,20 @@
                     </FlexBox>
                 </form:content>
             </form:SimpleForm>
+            <Toolbar class="myToolbar">
+            <ToolbarSpacer ></ToolbarSpacer>
+            <Button text="Go" type="Transparent"  press="ongoPress"/>
+            <Button text="Copy Ref to" type="Transparent" id="abc" press="oncopyrefPress"/>
+            <Button text="Create" type="Transparent" press="onCreatePress"/>
+            </Toolbar>
 
             <!-- Footer with Submit -->
-            <footer>
+            <!-- <footer>
                 <OverflowToolbar>
                     <ToolbarSpacer/>
-                    <Button text="Copy Ref to" type="Emphasized" id="abc" press="oncopyrefPress"/>
+                    
                 </OverflowToolbar>
-            </footer>
+            </footer> -->
 
             
 

@@ -109,6 +109,13 @@
           "target": [
             "glrefView"
           ]
+        },
+        {
+          "name": "newgl",
+          "pattern": "newgl",
+          "target": [
+            "newglView"
+          ]
         }
       ],
       "targets": {
@@ -123,6 +130,11 @@
         "glrefView": {
           "id": "Glref",
           "name": "glrefpage"
+          
+        },
+        "newglView": {
+          "id": "Newgl",
+          "name": "newgl"
           
         }
       }
