@@ -8,7 +8,7 @@
         <Toolbar>
             <Button text="Back" press="onnavback"/>
         </Toolbar>
- <!-- <uxap:ObjectPageLayout showHeaderContent="true" useIconTabBar="false">
+ <uxap:ObjectPageLayout showHeaderContent="true" useIconTabBar="false">
         <uxap:headerTitle>
             <uxap:ObjectPageHeader
                 objectTitle="Create GL Account"
@@ -21,26 +21,33 @@
                 <uxap:subSections>
                     <uxap:ObjectPageSubSection>
                         <uxap:blocks>
-                            <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
-                                <form:content>
-                                    <Label text="Account Number"/>
-                                    <Input value="{newGL>/AccountNumber}"/>
+  <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+    <form:content>
+        <Label text="Account Number"/>
+        <Input value="{newGL>/AccountNumber}"/>
 
-                                    <Label text="Company Code"/>
-                                    <ComboBox selectedKey="{newGL>/CompanyCode}">
-                                        <core:Item key="1000" text="1000 Company 100"/>
-                                    </ComboBox>
+        <Label text="Company Code"/>
+        <ComboBox
+            items="{
+                path: '/CompanyCodeSet'
+            }"
+            selectedKey="{newGL>/COMPANYCODE}">
+            <core:ListItem key="{COMPANYCODE}" text="{COMPANYCODE}" />
+        </ComboBox>
 
-                                    <Label text="Account Name"/>
-                                    <Input value="{newGL>/AccountName}"/>
+        <Label text="Account Name"/>
+        <Input value="{newGL>/AccountName}"/>
 
-                                    <Label text="Account Type"/>
-                                    <ComboBox selectedKey="{newGL>/AccountType}">
-                                        <core:Item key="PRIM" text="Primary Costs or Revenues"/>
-                                        <core:Item key="BAL" text="Balance Sheet"/>
-                                    </ComboBox>
-                                </form:content>
-                            </form:SimpleForm>
+        <Label text="Account Type"/>
+        <ComboBox
+            items="{
+                path: '/GLAccDataSet'
+            }"
+            selectedKey="{newGL>/GlaccType}">
+            <core:ListItem key="{GlaccType}" text="{GlaccType}" />
+        </ComboBox>
+    </form:content>
+</form:SimpleForm>
                         </uxap:blocks>
                     </uxap:ObjectPageSubSection>
                 </uxap:subSections>
@@ -53,16 +60,22 @@
                             <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
                                 <form:content>
                                     <Label text="Account Group"/>
-                                    <ComboBox selectedKey="{newGL>/AccountGroup}">
-                                        <core:Item key="PL" text="P&amp;L Accounts"/>
-                                        <core:Item key="BS" text="Balance Sheet Accounts"/>
-                                    </ComboBox>
+                                    <ComboBox
+            items="{
+                path: '/GLAccDataSet'
+            }"
+            selectedKey="{newGL>/AccountGroup}">
+            <core:ListItem key="{AccountGroup}" text="{AccountGroup}" />
+        </ComboBox>
 
                                     <Label text="Currency"/>
-                                    <ComboBox selectedKey="{newGL>/Currency}">
-                                        <core:Item key="USD" text="USD"/>
-                                        <core:Item key="EUR" text="EUR"/>
-                                    </ComboBox>
+                                    <ComboBox
+                                        items="{
+                                            path: '/GLAccDataSet'
+                                        }"
+                                selectedKey="{newGL>/AccountCurrency}">
+                                <core:ListItem key="{AccountCurrency}" text="{AccountCurrency}" />
+        </ComboBox>
 
                                     <Label text="Description"/>
                                     <TextArea value="{newGL>/Description}"/>
@@ -73,72 +86,7 @@
                 </uxap:subSections>
             </uxap:ObjectPageSection>
         </uxap:sections>
-    </uxap:ObjectPageLayout> -->
-
-
-<Wizard id="createGLWizard">
-    <WizardStep title="Basic Data" validated="true">
-        <VBox>
-            <Label text="Account Number"/>
-            <Input value="{newGL>/AccountNumber}"/>
-            <Label text="Company Code"/>
-            <ComboBox selectedKey="{newGL>/CompanyCode}">
-                <core:Item key="1000" text="1000 Company 100"/>
-            </ComboBox>
-        </VBox>
-    </WizardStep>
-
-    <WizardStep title="Account Details">
-        <VBox>
-            <Label text="Account Type"/>
-            <ComboBox selectedKey="{newGL>/AccountType}">
-                <core:Item key="PRIM" text="Primary Costs or Revenues"/>
-            </ComboBox>
-            <Label text="Account Group"/>
-            <ComboBox selectedKey="{newGL>/AccountGroup}">
-                <core:Item key="PL" text="PL Accounts"/>
-            </ComboBox>
-        </VBox>
-    </WizardStep>
-
-    <WizardStep title="Currency  Description">
-        <VBox>
-            <Label text="Currency"/>
-            <ComboBox selectedKey="{newGL>/Currency}">
-                <core:Item key="USD" text="USD"/>
-            </ComboBox>
-            <Label text="Description"/>
-            <TextArea value="{newGL>/Description}"/>
-        </VBox>
-    </WizardStep>
-</Wizard>
-
-
-
-
-
-
-
-
-
-    <!-- <form:SimpleForm editable="true" layout="ResponsiveGridLayout" width="700px">
-    <form:content>
-        <Label text="GL Account Num"/>
-        <Input value="{newGL>/Glaccnum}"/>
-
-        <Label text="Company Code"/>
-        <Input value="{newGL>/CompanyCode}"/>
-
-        <Label text="GL Acc Type"/>
-        <Input value="{newGL>/GlaccType}"/>
-
-        <Label text="Account Group"/>
-        <Input value="{newGL>/AccountGroup}"/>
-
-        <Label text="Account Currency"/>
-        <Input value="{newGL>/AccountCurrency}"/>
-    </form:content>
-</form:SimpleForm> -->
+    </uxap:ObjectPageLayout>
 
     <footer>
                 <OverflowToolbar>

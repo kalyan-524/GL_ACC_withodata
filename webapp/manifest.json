@@ -103,7 +103,7 @@
             "glView1"
           ]
         },
-          {
+        {
           "name": "glrefpage",
           "pattern": "glrefpage",
           "target": [
@@ -130,12 +130,10 @@
         "glrefView": {
           "id": "Glref",
           "name": "glrefpage"
-          
         },
         "newglView": {
           "id": "Newgl",
           "name": "newgl"
-          
         }
       }
     },

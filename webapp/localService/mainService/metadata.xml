@@ -18,9 +18,16 @@
                 </Key>
                 <Property Name="GLAcc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="GL_ACC" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
+            <EntityType Name="CompanyCode" sap:content-version="1">
+                <Key>COMPANYCODE"
+                    <PropertyRef Name="/>
+                </Key>
+                <Property Name="COMPANYCODE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
             <EntityContainer Name="ZRK_GLCREATION_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
-                <EntitySet Name="GLAccDataSet" EntityType="ZRK_GLCREATION_SRV.GLAccData" sap:creatable="true" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="GLAccDataSet" EntityType="ZRK_GLCREATION_SRV.GLAccData" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
                 <EntitySet Name="F4HelpSet" EntityType="ZRK_GLCREATION_SRV.F4Help" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="CompanyCodeSet" EntityType="ZRK_GLCREATION_SRV.CompanyCode" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
             </EntityContainer>
             <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
             <atom:link rel="self" href="http://host:40/sap/opu/odata/sap/ZRK_GLCREATION_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
