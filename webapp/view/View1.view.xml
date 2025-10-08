@@ -4,14 +4,38 @@
     <Page id="page" title="GL Request Form">
 
     <!-- <FlexBox > -->
-        <GenericTile 
+        <!-- <GenericTile 
          frameType="TwoByOne"
          class="sapUiTinyMargin"
          backgroundImage="https://tse1.mm.bing.net/th/id/OIP.AYI2KeT8B9otNX0Pp-5JGgHaFj?rs=1"
          header="Create GL Acc"
          press="oncreategl">
-                </GenericTile>
+                </GenericTile> -->
     <!-- </FlexBox> -->
+
+    <content>
+            <FlexBox
+                justifyContent="Center"
+                alignItems="Center"
+                wrap="Wrap"
+                class="sapUiMediumMarginTop">
+
+            <CustomListItem type="Active" press="oncreategl" class="noBorder">
+                    <VBox class="modernTile">
+                        <VBox class="tileIconContainer" alignItems="Center" justifyContent="Center">
+                            <Image
+                                src="sap-icon://accounting-document-verification"
+                                width="3rem"
+                                height="3rem"
+                                class="tileIcon" />
+                        </VBox>
+                        <Text text="Create GL Account" class="tileHeader" />
+                        <Text text="Manage General Ledger Master Data" class="tileSubheader" />
+                    </VBox>
+                </CustomListItem>
+
+            </FlexBox>
+        </content>
 
     </Page>
 </mvc:View>

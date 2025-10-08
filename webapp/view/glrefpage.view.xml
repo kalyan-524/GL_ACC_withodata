@@ -29,8 +29,13 @@
 
         <form:SimpleForm editable="true" layout="ResponsiveGridLayout" width="700px">
         <form:content>
-            <Label text="GL Account Num"/>
+            <!-- <Label text="GL Account Num"/> -->
+            <Label text="Ref GL Num"/>
             <Input value="{selectedGL>/Glaccnum}" editable= "false"/>
+
+            <Label text="GL Num"/>
+            <Input value="{ }" />
+
             <Label text="Company Code"/>
             <Input value="{selectedGL>/CompanyCode}" />
             <Label text="GL Acc Type"/>

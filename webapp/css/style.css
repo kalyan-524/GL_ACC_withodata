@@ -8,3 +8,61 @@
     padding: 0.5rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+
+.mainPage {
+    background: #f8f9fb;
+}
+
+/* Card-style Tile */
+.modernTile {
+    width: 280px;
+    height: 220px;
+    background: linear-gradient(145deg, #ffffff, #eaf1fb);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.modernTile:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(145deg, #e0efff, #f7fbff);
+}
+
+/* Icon */
+.tileIconContainer {
+    background: #d1e9ff;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tileIcon {
+    color: #086ed4;
+}
+
+/* Text */
+.tileHeader {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #0b3054;
+    margin-top: 8px;
+}
+
+.tileSubheader {
+    font-size: 0.9rem;
+    color: #4b637a;
+    margin-top: 4px;
+}

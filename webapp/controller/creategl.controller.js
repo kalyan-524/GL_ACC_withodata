@@ -99,6 +99,15 @@ sap.ui.define([
 ongoPress: function () {
     var oModel = this.getView().getModel();   // ODataModel (ZRK_GLCREATION_SRV)
     var oLocalModel = this.getView().getModel("local");
+    var oRefGLInput = this.byId("refGLNum"); 
+
+    // Clear Reference GL field
+    if (oRefGLInput) {
+        oRefGLInput.setValue("");
+    }
+
+    // Clear previous GL details from the local model
+    oLocalModel.setProperty("/GLDetails", []);
 
     oModel.read("/GLAccDataSet", {
         success: function (oData) {

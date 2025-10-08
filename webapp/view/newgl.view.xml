@@ -24,7 +24,7 @@
   <form:SimpleForm editable="true" layout="ResponsiveGridLayout">
     <form:content>
         <Label text="Account Number"/>
-        <Input value="{newGL>/AccountNumber}"/>
+        <Input value="{newGL>/AccountNumber}" editable="false"/>
 
         <Label text="Company Code"/>
         <ComboBox

@@ -19,8 +19,8 @@
                 <Property Name="GLAcc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="GL_ACC" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
             <EntityType Name="CompanyCode" sap:content-version="1">
-                <Key>COMPANYCODE"
-                    <PropertyRef Name="/>
+                <Key>
+                    <PropertyRef Name="COMPANYCODE"/>
                 </Key>
                 <Property Name="COMPANYCODE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
             </EntityType>
